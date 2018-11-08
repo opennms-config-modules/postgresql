@@ -1,0 +1,38 @@
+= PostgreSQL
+
+OpenNMS configuration files for PostgreSQL Statistics Collector.
+It contains more monitoring metrics from PostgreSQL as the one provided in ONMS default installation. 
+
+The config was tested with PostgreSQL v10.
+Official documentation can be found here: https://www.postgresql.org/docs/10/monitoring-stats.html#MONITORING-STATS-VIEWS
+
+
+
+== Installation
+
+.Download and install from GitHub
+[source, bash]
+----
+mkdir ${HOME}/opennms-config-workspace
+cd ${HOME}/opennms-config-workspace
+git clone https://github.com/opennms-config-modules/postgresql.git
+----
+
+=== Data Collection
+
+.Install datacollection configuration
+
+Replace the package `PostgreSQL` in `jdbc-datacollection-config.xml` with the one provided in `datacollection/postgresql.xml`.
+
+
+=== Graph Report Definitions
+
+.Install graph report definitions
+
+
+Replace the original `postgresql-graph.properties` file with the one provided in `graphs/postgresql-graph.properties`.
+
+[source, bash]
+----
+`cp -f postgresql/graphs/postgresql-graph.properties ../snmp-graph.properties.d/`
+----
