@@ -60,10 +60,10 @@
                <column name="tup_inserted" data-source-name="tup_inserted" type="counter" alias="tup_inserted"/>
                <column name="tup_updated" data-source-name="tup_updated" type="counter" alias="tup_updated"/>
                <column name="tup_deleted" data-source-name="tup_deleted" type="counter" alias="tup_deleted"/>
-               <column name="conflicts" data-source-name="conflicts" type="gauge" alias="conflicts"/>
+               <column name="conflicts" data-source-name="conflicts" type="counter" alias="conflicts"/>
                <column name="temp_files" data-source-name="temp_files" type="gauge" alias="temp_files"/>
                <column name="temp_bytes" data-source-name="temp_bytes" type="gauge" alias="temp_bytes"/>
-               <column name="deadlocks" data-source-name="deadlocks" type="gauge" alias="deadlocks"/>
+               <column name="deadlocks" data-source-name="deadlocks" type="counter" alias="deadlocks"/>
                <column name="blk_read_time" data-source-name="blk_read_time" type="gauge" alias="blk_read_time"/>
                <column name="blk_write_time" data-source-name="blk_write_time" type="gauge" alias="blk_write_time"/>
             </columns>
