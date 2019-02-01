@@ -175,19 +175,11 @@
           </query>
           <query name="pgStatExclLck60" ifType="ignore">
                 <statement>
-                    <queryString>SELECT count(*) as pgStatExclLck60 FROM  pg_stat_activity a JOIN pg_locks l ON l.pid = a.pid JOIN pg_class c ON c.oid = l.relation where mode = 'RowExclusiveLock' and query_start &lt; (current_timestamp at time zone 'utc' - interval '60 minutes') and position('autovacuum:' in a.query) != 1;</queryString>
+                    <queryString>SELECT count(*) as pgStatExclLck60 FROM pg_stat_activity a JOIN pg_locks l ON l.pid = a.pid JOIN pg_class c ON c.oid = l.relation where mode = 'RowExclusiveLock' and query_start &lt; (current_timestamp at time zone 'utc' - interval '60 minutes') and position('autovacuum:' in a.query) != 1;</queryString>
                 </statement>
                 <columns>
                     <column name="pgStatExclLck60" data-source-name="pgStatExclLck60" alias="pgStatExclLck60" type="gauge"/>
                 </columns>
-            </query>
-            <query name="pgStatExclLckAll60" ifType="ignore">
-                <statement>
-                    <queryString>SELECT count(*) as pgStatExclLckAll60 FROM  pg_stat_activity a JOIN pg_locks l ON l.pid = a.pid JOIN pg_class c ON c.oid = l.relation where mode = 'RowExclusiveLock' and query_start &lt; (current_timestamp at time zone 'utc' - interval '60 minutes');</queryString>
-                </statement>
-                <columns>
-                    <column name="pgStatExclLckAll60" data-source-name="pgStatExclLckAll60" alias="pgStatExclLckAll60" type="gauge"/>
-                </columns>
-            </query>
+          </query>
       </queries>
    </jdbc-collection>
