@@ -181,5 +181,13 @@
                     <column name="pgStatExclLck60" data-source-name="pgStatExclLck60" alias="pgStatExclLck60" type="gauge"/>
                 </columns>
           </query>
+          <query name="pguptime" ifType="ignore">
+                <statement>
+                    <queryString>select extract(epoch from current_timestamp - pg_postmaster_start_time()) as pguptime</queryString>
+                </statement>
+                <columns>
+                    <column name="pguptime" data-source-name="pguptime" alias="pguptime" type="gauge"/>
+                </columns>
+          </query>
       </queries>
    </jdbc-collection>
